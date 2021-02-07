@@ -64,7 +64,7 @@ class JoyTeleop:
                 rospy.logerr("unknown type '%s' for command '%s'", action_type, i)
 
         # Don't subscribe until everything has been initialized.
-        rospy.Subscriber('joy', sensor_msgs.msg.Joy, self.joy_callback)
+        rospy.Subscriber('web_joy', sensor_msgs.msg.Joy, self.joy_callback)
 
         # Run a low-freq action updater
         rospy.Timer(rospy.Duration(2.0), self.update_actions)
