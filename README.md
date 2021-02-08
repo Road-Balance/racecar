@@ -1,6 +1,26 @@
 # ROS Racecar for Traxxis RC Car
 
-vesc.yaml
+## Preparation
+
+```
+cd catkin_ws/src
+
+git clone https://github.com/Road-Balance/racecar.git
+
+sudo apt-get install ros-melodic-serial
+
+catkin_make
+source devel/setup.bash
+```
+
+```
+# check ACM
+cd /dev
+ls | grep ttyACM
+> ttyACM?
+```
+
+* set proper port number through `vesc.yaml`
 ```yaml
 vesc_driver:
   port: /dev/ttyACM1
@@ -17,3 +37,13 @@ vesc_driver:
   servo_min: 0.15
   servo_max: 0.85
 ```
+
+give permission
+``` 
+sudo chmod 777 ttyACM0
+# or
+sudo chmod 777 ttyACM1
+
+roslaunch racecar teleop.launch
+```
+
