@@ -46,5 +46,5 @@ sudo chmod 777 ttyACM1
 ```
 
 **launch!!**
-| roslaunch racecar teleop.launch
+> roslaunch racecar teleop.launch
 
