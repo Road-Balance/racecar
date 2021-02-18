@@ -6,10 +6,11 @@
   <rosparam file="$(arg sensors_config)" command="load" />
 
   <!-- laser -->
-
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
   <!-- <node pkg="urg_node" type="urg_node" name="laser_node" /> -->
 
   <!-- imu -->
-  <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" />
+  <!-- <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" /> -->
+  <include file="$(find myahrs_driver)/launch/myahrs_driver.launch" />
 
 </launch>
