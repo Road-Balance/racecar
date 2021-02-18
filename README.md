@@ -3,10 +3,18 @@
 ## Preparation
 
 ```
+  sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake 
+  set(_include_dirs "include;/usr/include;/usr/include/opencv")
+  set(_include_dirs "include;/usr/include;/usr/include/opencv4")
+```
+
+```
 cd catkin_ws/src
 
 git clone https://github.com/Road-Balance/racecar.git
 
+sudo apt-get install qt4-default
+sudo apt-get install ros-melodic-cv-bridge
 sudo apt-get install ros-melodic-serial
 
 catkin_make
@@ -23,7 +31,7 @@ ls | grep ttyACM
 * set proper port number through `vesc.yaml`
 ```yaml
 vesc_driver:
-  port: /dev/ttyACM1
+  port: /dev/ttyACM0
   duty_cycle_min: 0.0
   duty_cycle_max: 0.0
   current_min: 0.0
