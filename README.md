@@ -2,6 +2,15 @@
 
 ## Preparation
 
+rosbag record -a
+
+
+```
+cd catkin_ws/src
+git clone https://github.com/ccny-ros-pkg/scan_tools.git
+sudo apt-get install ros-melodic-csm -y
+```
+
 ```
   sudo gedit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake 
   set(_include_dirs "include;/usr/include;/usr/include/opencv")
