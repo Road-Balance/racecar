@@ -1,7 +1,7 @@
 <!-- -*- mode: XML -*- -->
 <launch>
   <!-- launch script arguments -->
-  <arg name="bag"/>
+  <arg name="bag" default="/home/swimming/catkin_ws/src/racecar/bag/2021-02-19-05-51-35.bag" />
   <arg name="rate" default="1.0"/>
   <arg name="start" default="0.0"/>
 

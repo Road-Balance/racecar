@@ -1,7 +1,7 @@
 <!-- -*- mode: XML -*- -->
 <launch>
   <!-- launch script arguments -->
-  <arg name="bag"/>
+  <arg name="bag" default="/home/swimming/catkin_ws/src/racecar/bag/2021-02-19-05-51-35.bag" />
   <arg name="rate" default="1.0"/>
   <arg name="start" default="0.0"/>
   <arg name="resolution" default="0.05"/>
@@ -12,7 +12,7 @@
     <arg name="start" value="$(arg start)" />
   </include>
 
-  <include file="$(find racecar)/launch/includes/racecar-v1/static_transforms.launch.xml" />
+  <include file="$(find racecar)/launch/includes/racecar-v2/static_transforms.launch.xml" />
 
   <group ns="hector">
     <!-- force forward velocity -->
