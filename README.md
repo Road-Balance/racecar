@@ -67,10 +67,14 @@ sudo chmod 777 ttyACM1
 
 ## Run
 
-```
-cd /dev && sudo chmod 777 vesc && sudo chmod 777 ttyACM0
+#TODO : etc udev rules.d
 
+```
 # terminal 1
+cd /dev 
+sudo chmod 777 vesc
+sudo chmod 777 ttyACM0
+cd ~/
 roscore
 
 # terminal 2 
@@ -84,7 +88,7 @@ sds
 roslaunch racecar teleop.launch
 
 
-# terminal 4
+# terminal 4 / check success && camera on
 roseloq
-ros2 run webrtc_bot web_sub_joy_pub 
+ros2 run webrtc_bot web_sub_joy_pub
 ```
