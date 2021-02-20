@@ -65,3 +65,26 @@ sudo chmod 777 ttyACM1
 **launch!!**
 > roslaunch racecar teleop.launch
 
+## Run
+
+```
+cd /dev && sudo chmod 777 vesc && sudo chmod 777 ttyACM0
+
+# terminal 1
+roscore
+
+# terminal 2 
+source ~/.bashrc_bridge
+export ROS_MASTER_URI=http://localhost:11311/
+ros2 run ros1_bridge dynamic_bridge
+
+# terminal 3
+cd ~/catkin_ws
+sds
+roslaunch racecar teleop.launch
+
+
+# terminal 4
+roseloq
+ros2 run webrtc_bot web_sub_joy_pub 
+```
