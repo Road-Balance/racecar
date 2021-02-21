@@ -75,7 +75,9 @@ cd /dev
 sudo chmod 777 vesc
 sudo chmod 777 ttyACM0
 cd ~/
-roscore
+cd ~/catkin_ws
+sds
+roslaunch racecar teleop.launch
 
 # terminal 2 
 source ~/.bashrc_bridge
@@ -83,12 +85,16 @@ export ROS_MASTER_URI=http://localhost:11311/
 ros2 run ros1_bridge dynamic_bridge
 
 # terminal 3
-cd ~/catkin_ws
-sds
-roslaunch racecar teleop.launch
-
-
-# terminal 4 / check success && camera on
 roseloq
 ros2 run webrtc_bot web_sub_joy_pub
+
+#terminal 4
+roseloq
+ros2 run webrtc_bot regular_joy_pub 
+
+
+# Option  / check success && camera on
+cd /home/swimming/dev_ws/src/traxxas-teamGRIT/webrtc_bot/launch
+ros2 launch 
+ros2 launch web_sub_joy.launch.py
 ```
