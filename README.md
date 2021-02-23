@@ -72,8 +72,8 @@ sudo chmod 777 ttyACM1
 ```
 # terminal 1
 cd /dev 
-sudo chmod 777 vesc
-sudo chmod 777 ttyACM0
+sudo chmod 777 /dev/vesc
+sudo chmod 777 /dev/ttyACM0
 cd ~/
 cd ~/catkin_ws
 sds
@@ -90,7 +90,7 @@ ros2 run webrtc_bot web_sub_joy_pub
 
 #terminal 4
 roseloq
-ros2 run webrtc_bot regular_joy_pub 
+ros2 run webrtc_bot regular_joy_pub
 
 
 # Option  / check success && camera on
