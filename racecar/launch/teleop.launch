@@ -7,9 +7,6 @@
   <include file="$(find racecar)/launch/includes/$(arg racecar_version)-teleop.launch.xml">
     <arg name="racecar_version" value="$(arg racecar_version)" />
     <arg name="run_camera" value="$(arg run_camera)" />
-  </include>
-
-  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find racecar)/rviz/snail.rviz" />
-  
+  </include>  
 
 </launch>
