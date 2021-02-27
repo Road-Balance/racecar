@@ -1,5 +1,5 @@
 <launch>
-  <arg name="port" default="/dev/ttyACM0" />
+  <arg name="port" default="/dev/ttyACM1" />
   <arg name="baud_rate" default="115200" />
 
   <node pkg="myahrs_driver" type="myahrs_driver" name="myahrs_driver">
