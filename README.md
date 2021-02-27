@@ -74,6 +74,8 @@ sudo chmod 777 ttyACM1
 cd /dev 
 sudo chmod 777 /dev/vesc
 sudo chmod 777 /dev/ttyACM0
+sudo chmod 777 /dev/ttyACM1
+sudo chmod 777 /dev/rplidar
 cd ~/
 cd ~/catkin_ws
 sds
