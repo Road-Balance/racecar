@@ -20,8 +20,7 @@ teleop:
   human_control:
     type: topic
     message_type: ackermann_msgs/AckermannDriveStamped
-    topic_name: /irregular_joy
-    # low_level/ackermann_cmd_mux/input/teleop
+    topic_name: low_level/ackermann_cmd_mux/input/teleop
     deadman_buttons: [4]
     axis_mappings:
       - axis: 1
