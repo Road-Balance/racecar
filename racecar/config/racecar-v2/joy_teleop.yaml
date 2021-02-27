@@ -11,29 +11,26 @@ teleop:
     message_type: ackermann_msgs/AckermannDriveStamped
     topic_name: low_level/ackermann_cmd_mux/input/teleop
     message_value:
-      -
-        target: drive.speed
+      - target: drive.speed
         value: 0.0
-      -
-        target: drive.steering_angle
+      - target: drive.steering_angle
         value: 0.0
 
   # Enable Human control by holding Left Bumper
   human_control:
     type: topic
     message_type: ackermann_msgs/AckermannDriveStamped
-    topic_name: low_level/ackermann_cmd_mux/input/teleop
+    topic_name: /irregular_joy
+    # low_level/ackermann_cmd_mux/input/teleop
     deadman_buttons: [4]
     axis_mappings:
-      -
-        axis: 1
+      - axis: 1
         target: drive.speed
-        scale: 2.0                   # joystick will command plus or minus 2 meters / second
+        scale: 2.0 # joystick will command plus or minus 2 meters / second
         offset: 0.0
-      -
-        axis: 2
+      - axis: 2
         target: drive.steering_angle
-        scale: 0.34                  # joystick will command plus or minus ~20 degrees steering angle
+        scale: 0.34 # joystick will command plus or minus ~20 degrees steering angle
         offset: 0.0
 
   # Enable autonomous control by pressing right bumper
@@ -45,6 +42,5 @@ teleop:
     topic_name: /dev/null
     deadman_buttons: [5]
     message_value:
-      -
-        target: data
+      - target: data
         value: 0

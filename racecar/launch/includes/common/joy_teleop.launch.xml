@@ -1,8 +1,7 @@
 <!-- -*- mode: XML -*- -->
 <launch>
   <arg name="racecar_version" />
-  <arg name="joy_teleop_config"
-       default="$(find racecar)/config/$(arg racecar_version)/joy_teleop.yaml" />
+  <arg name="joy_teleop_config" default="$(find racecar)/config/$(arg racecar_version)/joy_teleop.yaml" />
 
   <rosparam file="$(arg joy_teleop_config)" command="load" />
 
@@ -10,5 +9,6 @@
   <!-- <node pkg="joy" type="joy_node" name="joy_node" /> -->
 
   <node pkg="racecar" type="joy_teleop.py" name="joy_teleop" />
+  <node pkg="racecar" type="regular_joy_node" name="regular_joy_node" />
 
 </launch>
