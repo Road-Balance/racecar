@@ -1,0 +1,13 @@
+<launch>
+    <arg name="rviz_description" default="0" />
+
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find racecar)/urdf/simplecar.xacro" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <group if="$(eval arg('rviz_description') ==0)">
+        <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    </group>
+
+    <!-- <param name="publish_frequency" value="30.0"/> -->
+</launch>
