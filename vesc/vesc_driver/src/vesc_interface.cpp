@@ -228,7 +228,7 @@ void VescInterface::setBrake(double brake)
 
 void VescInterface::setSpeed(double speed)
 {
-  send(VescPacketSetRPM(speed));
+  send(VescPacketSetRPM(-1 * speed));
 }
 
 void VescInterface::setPosition(double position)
