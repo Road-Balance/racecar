@@ -2,8 +2,6 @@
 
 ## Preparation
 
-rosbag record -a
-
 
 ```
 cd catkin_ws/src
@@ -104,6 +102,12 @@ ros2 launch web_sub_joy.launch.py
 gmapping
 > [caution] check ROS_MASTER_URI
 ```
+# run this after ssh 
 roslaunch racecar gmapping.launch
+
+# local laptop
 roslaunch racecar gmapping_rviz.launch 
+rosrun joy joy_node joy:=/vesc/joy _autorepeat_rate:=30
+rosbag record -a
+rosbag play <your-rosbag>
 ```
