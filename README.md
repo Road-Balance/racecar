@@ -81,7 +81,7 @@ cd ~/catkin_ws
 sds
 roslaunch racecar teleop.launch
 
-# terminal 2 
+# terminal 2
 source ~/.bashrc_bridge
 export ROS_MASTER_URI=http://localhost:11311/
 ros2 run ros1_bridge dynamic_bridge
@@ -99,4 +99,11 @@ ros2 run webrtc_bot regular_joy_pub
 cd /home/swimming/dev_ws/src/traxxas-teamGRIT/webrtc_bot/launch
 ros2 launch 
 ros2 launch web_sub_joy.launch.py
+```
+
+gmapping
+> [caution] check ROS_MASTER_URI
+```
+roslaunch racecar gmapping.launch
+roslaunch racecar gmapping_rviz.launch 
 ```
