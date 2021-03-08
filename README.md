@@ -1,4 +1,4 @@
-# ROS Racecar for Traxxis RC Car
+# ROS Racecar for Traxxas RC Car
 
 ## Preparation
 
