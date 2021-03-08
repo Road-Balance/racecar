@@ -2,11 +2,10 @@
 <launch>
   <!-- launch script arguments -->
   <arg name="bag" default="/home/swimming/catkin_ws/src/racecar/bag/2021-02-19-05-51-35.bag" />
-  <arg name="rate" default="1.0"/>
-  <arg name="start" default="0.0"/>
+  <arg name="rate" default="1.0" />
+  <arg name="start" default="0.0" />
 
   <!-- bag file player -->
-  <param name="/use_sim_time" value="true"/>
-  <node pkg="rosbag" type="play" name="play" output="screen"
-        args="$(arg bag) --start $(arg start) --rate $(arg rate) --clock --delay=10"/>
+  <param name="/use_sim_time" value="true" />
+  <node pkg="rosbag" type="play" name="play" output="screen" args="$(arg bag) --start $(arg start) --rate $(arg rate) --clock --delay=10" />
 </launch>

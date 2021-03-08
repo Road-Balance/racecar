@@ -1,0 +1,30 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+  <!-- launch script arguments -->
+  <arg name="bag" default="/home/kimsooyoung/gcamp_ws/src/racecar/racecar/bags/swimming_room.bag" />
+  <arg name="rate" default="1.0" />
+  <arg name="start" default="0.0" />
+  <arg name="resolution" default="0.05" />
+
+  <!-- Gmapping Arguments -->
+  <arg name="set_base_frame" default="base_link" />
+  <arg name="set_odom_frame" default="odom" />
+  <arg name="set_map_frame" default="map" />
+
+  <include file="$(find racecar)/launch/replay_bag_file/replay_bag_file.launch">
+    <arg name="bag" value="$(arg bag)" />
+    <arg name="rate" value="$(arg rate)" />
+    <arg name="start" value="$(arg start)" />
+  </include>
+
+  <!-- Gmapping -->
+  <node pkg="gmapping" type="slam_gmapping" name="snail_slam_gmapping" output="screen">
+    <param name="base_frame" value="$(arg set_base_frame)" />
+    <param name="odom_frame" value="$(arg set_odom_frame)" />
+    <param name="map_frame" value="$(arg set_map_frame)" />
+    <rosparam command="load" file="$(find racecar)/config//racecar-v2/gmapping_params.yaml" />
+  </node>
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find racecar)/rviz/snail.rviz" />
+
+</launch>
