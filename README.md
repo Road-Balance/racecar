@@ -7,6 +7,9 @@
 cd catkin_ws/src
 git clone https://github.com/ccny-ros-pkg/scan_tools.git
 sudo apt-get install ros-melodic-csm -y
+sudo apt-get install ros-melodic-map-server -y
+sudo apt-get install ros-melodic-amcl -y
+sudo apt-get install ros-melodic-teb-local-planner -y
 ```
 
 ```
@@ -110,4 +113,19 @@ roslaunch racecar gmapping_rviz.launch
 rosrun joy joy_node joy:=/vesc/joy _autorepeat_rate:=30
 rosbag record -a
 rosbag play <your-rosbag>
+
+
+rosrun gmapping slam_gmapping scan:=kobuki/laser/scan
+rosbag play name_of_bag_file_created_in_step_1
+rosrun map_server map_saver -f map_name
+```
+
+navigation
+```
+# run this after ssh 
+roslaunch racecar racecar_navigation.launch
+
+# local laptop
+roslaunch racecar racecar_navigation_rviz.launch 
+rosrun joy joy_node joy:=/vesc/joy _autorepeat_rate:=30
 ```
